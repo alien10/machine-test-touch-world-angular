@@ -1,17 +1,24 @@
 import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
+import { RouterOutlet, Routes, provideRouter } from '@angular/router';
+import { LoginComponent } from './app/login/login.component';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet,],
   template: `
-    <h1>Hello from {{ name }}!</h1>
-    <a target="_blank" href="https://angular.dev/overview">
-      Learn more about Angular
-    </a>
+    <router-outlet></router-outlet>
   `,
 })
 export class App {
   name = 'Angular';
 }
-
-bootstrapApplication(App);
+const routes: Routes = [
+  // Define your routes here
+  { path: '', component: LoginComponent }, 
+  // { path: 'about', component: AboutComponent }, 
+];
+bootstrapApplication(App,{
+  providers: [provideRouter(routes),],
+});

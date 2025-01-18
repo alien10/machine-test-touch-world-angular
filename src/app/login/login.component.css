@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body-bg {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://img.freepik.com/free-photo/street-with-car-with-stop-lights_1194-1135.jpg?t=st=1737218582~exp=1737222182~hmac=ccd890eef20559640640c2c4e1243a6b61121f2b5d057967ea2e08577f88761e&w=996');
+    color: white;
+}
+
+.container {
+    display: flex;
+    max-width: 900px;
+    width: 90%;
+    background-image: url('https://images.unsplash.com/photo-1730818203797-897b2838105a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.left-section {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background: url('https://source.unsplash.com/random') no-repeat center center/cover;
+}
+
+.left-section .content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.left-section h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.left-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    color: black;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.right-section {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.right-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+}
+
+.form-group a {
+    text-decoration: none;
+    color: #00aaff;
+    font-size: 12px;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background: #ff3b3b;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.button-group a {
+    text-decoration: none;
+    color: #00aaff;
+}

@@ -1,1 +1,103 @@
-<p>dashboard works!</p>
+<!-- <div>
+    <button (click)="addNew()">Add Employee</button>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>
+          EMPLOYEE NAME
+          <input [(ngModel)]="searchTerm.name" placeholder="Search Name" />
+        </th>
+        <th>
+          CONTACT NO
+          <input [(ngModel)]="searchTerm.contact" placeholder="Search Contact" />
+        </th>
+        <th>
+          EMAIL
+          <input [(ngModel)]="searchTerm.email" placeholder="Search Email" />
+        </th>
+        <th>
+          ADDRESS
+          <input [(ngModel)]="searchTerm.address" placeholder="Search Address" />
+        </th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of filteredEmployees; let i = index">
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.contact }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.address }}</td>
+        <td><button (click)="deleteEmployee(i)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div>
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }}</span>
+    <button
+      (click)="nextPage()"
+      [disabled]="currentPage * itemsPerPage >= employees.length"
+    >
+      Next
+    </button>
+  </div>
+   -->
+
+
+   <div class="table-container">
+    <!-- Add Employee Button -->
+    <div class="actions">
+      <button class="add-button" (click)="addNew()">Add Employee</button>
+    </div>
+  
+    <!-- Employee Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>
+            EMPLOYEE NAME
+            <input class="search-field" [(ngModel)]="searchTerm.name" placeholder="Search Name" />
+          </th>
+          <th>
+            CONTACT NO
+            <input class="search-field" [(ngModel)]="searchTerm.contact" placeholder="Search Contact" />
+          </th>
+          <th>
+            EMAIL
+            <input class="search-field" [(ngModel)]="searchTerm.email" placeholder="Search Email" />
+          </th>
+          <th>
+            ADDRESS
+            <input class="search-field" [(ngModel)]="searchTerm.address" placeholder="Search Address" />
+          </th>
+          <th>ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of filteredEmployees; let i = index">
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.contact }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ employee.address }}</td>
+          <td><button class="delete-button" (click)="deleteEmployee(i)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Pagination Controls -->
+    <div class="pagination">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }}</span>
+      <button
+        (click)="nextPage()"
+        [disabled]="currentPage * itemsPerPage >= employees.length"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+  

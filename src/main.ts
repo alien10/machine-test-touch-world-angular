@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouterOutlet, Routes, provideRouter } from '@angular/router';
 import { LoginComponent } from './app/login/login.component';
+import { SideNavComponent } from './app/side-nav/side-nav.component';
+import { DashboardComponent } from './app/dashboard/dashboard.component';
+import { SettingsComponent } from './app/settings/settings.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +19,14 @@ export class App {
 }
 const routes: Routes = [
   // Define your routes here
-  { path: '', component: LoginComponent }, 
+  { path: 'login', component: LoginComponent },
+  { path:'dashboard', component:SideNavComponent,
+  children:[
+      {path:'', redirectTo:'employee-list',pathMatch:'full'},
+      {path:'employee-list',component:DashboardComponent},
+      {path:'api-integration', component:SettingsComponent}
+]}, 
+  { path: '', redirectTo: 'login', pathMatch: 'full' }
   // { path: 'about', component: AboutComponent }, 
 ];
 bootstrapApplication(App,{

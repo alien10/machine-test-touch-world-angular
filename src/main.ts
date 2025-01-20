@@ -21,7 +21,6 @@ export class App {
   name = 'Angular';
 }
 const routes: Routes = [
-  // Define your routes here
   { path: 'login', component: LoginComponent },
   { path:'dashboard', component:SideNavComponent,
   children:[

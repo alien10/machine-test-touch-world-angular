@@ -1,0 +1,58 @@
+
+
+   <div class="table-container">
+    <div class="loader" *ngIf="isLoading"></div>
+    <div class="filter-container">
+      <input
+        type="text"
+        class="filter-input"
+        placeholder="Filter by ID..."
+        (input)="applyColumnFilter($event, 'id')"
+      />
+      <input
+        type="text"
+        class="filter-input"
+        placeholder="Filter by Name..."
+        (input)="applyColumnFilter($event, 'name')"
+      />
+      <input
+        type="text"
+        class="filter-input"
+        placeholder="Filter by Date..."
+        (input)="applyColumnFilter($event, 'date')"
+      />
+    </div>
+  
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th (click)="sortData('id')">ID</th>
+          <th (click)="sortData('name')">Name</th>
+          <th (click)="sortData('date')">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of displayedData; trackBy: trackById">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.date }}</td>
+        </tr>
+      </tbody>
+      
+    </table>
+   
+      
+    <div class="pagination">
+      <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">
+        Previous
+      </button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button
+        (click)="changePage(currentPage + 1)"
+        [disabled]="currentPage === totalPages"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+  

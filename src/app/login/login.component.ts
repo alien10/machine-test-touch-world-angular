@@ -21,23 +21,18 @@ export class LoginComponent {
   }
   
   onSubmit() {
-    // Mark all fields as touched to trigger validation messages
     this.loginForm.markAllAsTouched();
-  
-    // Check if the form is valid
+
     if (this.loginForm.invalid) {
       this.errorMessage = 'Please fill out all required fields!';
       return;
     }
   
-    // Validate credentials
     const { username, password } = this.loginForm.value;
   
     if (username === 'touchworld' && password === 'touchworldTech') {
-      // alert('kiitt')
       this.router.navigate(['/dashboard']);
     } else {
-      // Display error message for invalid credentials
       this.errorMessage = 'Invalid username or password!';
     }
   }

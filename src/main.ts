@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouterOutlet, Routes, provideRouter } from '@angular/router';
 import { LoginComponent } from './app/login/login.component';
 import { SideNavComponent } from './app/side-nav/side-nav.component';
 import { DashboardComponent } from './app/dashboard/dashboard.component';
-import { SettingsComponent } from './app/settings/settings.component';
 import { AddemployeeComponent } from './app/addemployee/addemployee.component';
+import { ApiListingComponent } from './app/api-listing/api-listing.component';
+import { ApiListService } from './app/api-list.service';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,],
+  imports: [RouterOutlet],
   template: `
     <router-outlet></router-outlet>
   `,
@@ -25,12 +27,11 @@ const routes: Routes = [
   children:[
       {path:'', redirectTo:'employee-list',pathMatch:'full'},
       {path:'employee-list',component:DashboardComponent},
-      {path:'api-integration', component:SettingsComponent},
+      {path:'api-integration', component:ApiListingComponent},
       {path:'add-emp', component:AddemployeeComponent}
 ]}, 
   { path: '', redirectTo: 'login', pathMatch: 'full' }
-  // { path: 'about', component: AboutComponent }, 
 ];
 bootstrapApplication(App,{
-  providers: [provideRouter(routes),],
+  providers: [provideRouter(routes),ApiListService,provideHttpClient()],
 });

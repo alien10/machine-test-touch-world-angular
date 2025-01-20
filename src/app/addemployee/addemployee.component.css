@@ -1,4 +1,4 @@
-/* General container styling */
+
 form {
     max-width: 500px;
     margin: 0 auto;
@@ -13,7 +13,7 @@ form {
     margin-bottom: 15px;
   }
   
-  /* Label styling */
+
   label {
     display: block;
     font-weight: 600;
@@ -21,7 +21,7 @@ form {
     color: #333;
   }
   
-  /* Input and textarea styling */
+
   input[type="text"],
   input[type="email"],
   textarea {
@@ -40,7 +40,7 @@ form {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
   }
   
-  /* Button styling */
+
   button {
     width: 100%;
     padding: 10px 15px;
@@ -57,19 +57,19 @@ form {
     background-color: #0056b3;
   }
   
-  /* Error message styling */
+
   div div {
     color: red;
     font-size: 14px;
     margin-top: 5px;
   }
   
-  /* Add spacing between elements */
+
   textarea {
     resize: vertical;
   }
   
-  /* Back button styling */
+
   button[type="button"] {
     background-color: #6c757d;
   }
